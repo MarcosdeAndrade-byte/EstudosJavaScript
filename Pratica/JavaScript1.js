@@ -1,16 +1,15 @@
 /*
-Leia dois valores inteiros, no caso para variáveis A e B. A seguir, calcule a soma entre elas e atribua à variável SOMA. A seguir escrever o valor desta variável.
+Leia dois valores inteiros. A seguir, calcule o produto entre estes dois valores e atribua esta operação à variável PROD. A seguir mostre a variável PROD com mensagem correspondente.   
 
 Entrada
 O arquivo de entrada contém 2 valores inteiros.
 
 Saída
-Imprima a mensagem "SOMA" com todas as letras maiúsculas, com um espaço em branco antes e depois da igualdade seguido pelo valor correspondente à soma de A e B. Como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, caso contrário, você receberá "Presentation Error".
+Imprima a mensagem "PROD" e a variável PROD conforme exemplo abaixo, com um espaço em branco antes e depois da igualdade. Não esqueça de imprimir o fim de linha após o produto, caso contrário seu programa apresentará a mensagem: “Presentation Error”.
 */
 
-let A = parseInt(lines.shift());
-let B = parseInt(lines.shift());
+let primeiraVariavel = 10,segundaVariavel = 10;
 
-let soma = A + B;
+let prod = primeiraVariavel * segundaVariavel;
 
-console.log("SOMA = " + soma)
+console.log("PROD = ",prod);
