@@ -1,15 +1,13 @@
 /*
-Leia 3 valores, no caso, variáveis A, B e C, que são as três notas de um aluno. A seguir, calcule a média do aluno, sabendo que a nota A tem peso 2, a nota B tem peso 3 e a nota C tem peso 5. Considere que cada nota pode ir de 0 até 10.0, sempre com uma casa decimal.
+Leia quatro valores inteiros A, B, C e D. A seguir, calcule e mostre a diferença do produto de A e B pelo produto de C e D segundo a fórmula: DIFERENCA = (A * B - C * D).
 
 Entrada
-O arquivo de entrada contém 3 valores com uma casa decimal, de dupla precisão (double).
+O arquivo de entrada contém 4 valores inteiros.
 
 Saída
-Imprima a mensagem "MEDIA" e a média do aluno conforme exemplo abaixo, com 1 dígito após o ponto decimal e com um espaço em branco antes e depois da igualdade. Assim como todos os problemas, não esqueça de imprimir o fim de linha após o resultado, caso contrário, você receberá "Presentation Error".
+Imprima a mensagem DIFERENCA com todas as letras maiúsculas, conforme exemplo abaixo, com um espaço em branco antes e depois da igualdade.
 */
 
-let notaA = 10.0,notaB = 10.0,notaC = 5.0;
-
-let media = (notaA * 2 + notaB * 3 + notaC * 5) / 10;
-
-console.log("MEDIA = " + media.toFixed(1));
+let A = 0,B = 0,C = 7,D = 8;
+let dif = (A * B - C * D)
+console.log(dif)
