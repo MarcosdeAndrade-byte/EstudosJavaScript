@@ -8,8 +8,16 @@ Saída
 Imprima o número e o salário do funcionário, conforme exemplo fornecido, com um espaço em branco antes e depois da igualdade. No caso do salário, também deve haver um espaço em branco após o $.
 */
 
-let numeroFuncionario = 25,horasTrabalhadas = 100,valorHora = 5.50;
-let salario = horasTrabalhadas * valorHora;
+let funcionario = {
+     numeroFuncionario : 25,
+     horasTrabalhadas : 100,
+     valorHora : 5.50
+};
 
-console.log("NUMBER = " + numeroFuncionario);
-console.log("SALARY = " + salario.toFixed(2));
+function calcularSalario(){
+    let salario = funcionario.horasTrabalhadas * funcionario.valorHora;
+    return salario.toFixed(2);
+}
+
+console.log("NUMBER = " + funcionario.numeroFuncionario);
+console.log("SALARY = " + calcularSalario());
