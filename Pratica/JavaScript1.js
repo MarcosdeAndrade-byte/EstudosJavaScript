@@ -1,23 +1,38 @@
 /*
-Escreva um programa que leia o número de um funcionário, seu número de horas trabalhadas, o valor que recebe por hora e calcula o salário desse funcionário. A seguir, mostre o número e o salário do funcionário, com duas casas decimais.
+Faça um programa que leia o nome de um vendedor, seu salário fixo e o total da venda feito por si mesmo no mês (em dinheiro). Considerando que este vendedor recebe 15% sobre todos os produtos vendidos, escreva o salário final (total) deste vendedor no final do mês, com duas casas decimais.
+
+- Não se esqueça de imprimir o final da linha após o resultado, caso contrário você receberá "Erro de apresentação".
+
+- Não se esqueça dos espaços em branco.
 
 Entrada
-O arquivo de entrada contém 2 números inteiros e 1 número com duas casas decimais, representando o número, quantidade de horas trabalhadas e o valor que o funcionário recebe por hora trabalhada, respectivamente.
+O arquivo de entrada contém um texto (primeiro nome do empregado), e dois valores de dupla precisão, que são o salário do vendedor e o valor total vendido por ele/ ela.
 
 Saída
-Imprima o número e o salário do funcionário, conforme exemplo fornecido, com um espaço em branco antes e depois da igualdade. No caso do salário, também deve haver um espaço em branco após o $.
+Imprima o salário total do vendedor, de acordo com o exemplo dado.
+
+Amostras de entrada	Amostras de saída
+JOÃO
+500,00
+1230,30
+
+TOTAL = R$ 684,54
+
+PEDRO
+700.00
+0.00
+
+TOTAL = R$ 700,00
+
+MANGOJATA
+1700,00
+1230,50
+
+TOTAL = R$ 1884,58
 */
 
-let funcionario = {
-     numeroFuncionario : 25,
-     horasTrabalhadas : 100,
-     valorHora : 5.50
-};
+let name = "JOÃO",salarioFixo = 1700.00,TotalVenda = 1230.50,salarioFinal;
 
-function calcularSalario(){
-    let salario = funcionario.horasTrabalhadas * funcionario.valorHora;
-    return salario.toFixed(2);
-}
+salarioFinal = TotalVenda * 15 / 100 + salarioFixo;
 
-console.log("NUMBER = " + funcionario.numeroFuncionario);
-console.log("SALARY = " + calcularSalario());
+console.log(salarioFinal.toFixed(2));
