@@ -1,38 +1,21 @@
 /*
-Faça um programa que leia o nome de um vendedor, seu salário fixo e o total da venda feito por si mesmo no mês (em dinheiro). Considerando que este vendedor recebe 15% sobre todos os produtos vendidos, escreva o salário final (total) deste vendedor no final do mês, com duas casas decimais.
+Filtrando mensagens de saudação
+No primeiro exercício, começaremos com simplicidade - temos várias mensagens de cartão, 
+mas queremos classificá-las para listar apenas as mensagens de Natal. Queremos que você 
+preencha um teste condicional dentro da estrutura if (...), para testar cada string e 
+apenas imprimi-la na lista se for uma mensagem de Natal.
 
-- Não se esqueça de imprimir o final da linha após o resultado, caso contrário você receberá "Erro de apresentação".
+Primeiro pense em como você poderia testar se a mensagem em cada caso é uma mensagem de Natal. Qual string está presente em todas essas mensagens e que método você poderia usar para testar se ela está presente?
 
-- Não se esqueça dos espaços em branco.
+Em seguida, você precisará escrever um teste condicional do formulario operando2 operador operando1. A coisa à esquerda é igual à coisa à direita? Ou neste caso, o método chama à esquerda retorna o resultado à direita?
 
-Entrada
-O arquivo de entrada contém um texto (primeiro nome do empregado), e dois valores de dupla precisão, que são o salário do vendedor e o valor total vendido por ele/ ela.
-
-Saída
-Imprima o salário total do vendedor, de acordo com o exemplo dado.
-
-Amostras de entrada	Amostras de saída
-JOÃO
-500,00
-1230,30
-
-TOTAL = R$ 684,54
-
-PEDRO
-700.00
-0.00
-
-TOTAL = R$ 700,00
-
-MANGOJATA
-1700,00
-1230,50
-
-TOTAL = R$ 1884,58
+Dica: Nesse caso, é provavelmente mais útil testar se a chamada do método não é igual a um determinado resultado.
 */
 
-let name = "JOÃO",salarioFixo = 1700.00,TotalVenda = 1230.50,salarioFinal;
+let mensagens = ["Happy Birthday!","Merry Christmas my love","A happy Christmas to all the family","You're all I want for Christmas","Get well soon"];
 
-salarioFinal = TotalVenda * 15 / 100 + salarioFixo;
-
-console.log(salarioFinal.toFixed(2));
+for(let index = 0;index < mensagens.length;index++){
+    if(mensagens[index].indexOf("Christmas") != -1){
+       console.log(mensagens[index]);
+    }
+}
