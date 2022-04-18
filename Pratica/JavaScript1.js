@@ -21,7 +21,6 @@ for(var i = 0;i < qnt_Produtos;i++){
         produtos[i] = [id,quantidadePecas,valorUnitario];
 }
 
-let valorProdutos = 1;
 for(var i = 0;i < qnt_Produtos;i++){
     let valorProdutos = 1;
         for(var j = 1; j < 3;j++){
