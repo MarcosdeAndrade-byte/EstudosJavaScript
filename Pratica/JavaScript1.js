@@ -1,30 +1,17 @@
 /*
-Neste problema, deve-se ler o código de uma peça 1, o número de peças 1, o valor unitário de cada peça 1, o código de uma peça 2, o número de peças 2 e o valor unitário de cada peça 2. Após, calcule e mostre o valor a ser pago.
+Faça um programa que calcule e mostre o volume de uma esfera sendo fornecido o valor de seu raio (R). A fórmula para calcular o volume é: (4/3) * pi * R3. Considere (atribua) para pi o valor 3.14159.
+
+Dica: Ao utilizar a fórmula, procure usar (4/3.0) ou (4.0/3), pois algumas linguagens (dentre elas o C++), assumem que o resultado da divisão entre dois inteiros é outro inteiro.
 
 Entrada
-O arquivo de entrada contém duas linhas de dados. Em cada linha haverá 3 valores, respectivamente dois inteiros e um valor com 2 casas decimais.
+O arquivo de entrada contém um valor de ponto flutuante (dupla precisão), correspondente ao raio da esfera.
 
 Saída
-A saída deverá ser uma mensagem conforme o exemplo fornecido abaixo, lembrando de deixar um espaço após os dois pontos e um espaço após o "R$". O valor deverá ser apresentado com 2 casas após o ponto.
+A saída deverá ser uma mensagem "VOLUME" conforme o exemplo fornecido abaixo, com um espaço antes e um espaço depois da igualdade. O valor deverá ser apresentado com 3 casas após o ponto.
 */
 
-let id,quantidadePecas,valorUnitario;
-let produtos = [];
+let raio = window.prompt();
 
+let volume = ((4.0/3) * 3.14159) * (Math.pow(raio,3));
 
-let qnt_Produtos =  window.prompt("Deseja cadastrar quantos produtos: ");
-
-for(var i = 0;i < qnt_Produtos;i++){
-        id = window.prompt("Id");
-        quantidadePecas = window.prompt("Quantidade de peças");
-        valorUnitario = window.prompt("Valor unitário");
-        produtos[i] = [id,quantidadePecas,valorUnitario];
-}
-
-for(var i = 0;i < qnt_Produtos;i++){
-    let valorProdutos = 1;
-        for(var j = 1; j < 3;j++){
-            valorProdutos *= produtos[i][j];
-        }
-            console.log("R$: ",valorProdutos);
-}
+console.log("VOLUME: ",volume.toFixed(3));
