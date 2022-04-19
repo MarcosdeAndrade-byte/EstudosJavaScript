@@ -1,17 +1,68 @@
-/*
-Faça um programa que calcule e mostre o volume de uma esfera sendo fornecido o valor de seu raio (R). A fórmula para calcular o volume é: (4/3) * pi * R3. Considere (atribua) para pi o valor 3.14159.
-
-Dica: Ao utilizar a fórmula, procure usar (4/3.0) ou (4.0/3), pois algumas linguagens (dentre elas o C++), assumem que o resultado da divisão entre dois inteiros é outro inteiro.
-
+/*Escreva um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C. Em seguida, calcule e mostre:
+a) a área do triângulo retângulo que tem A por base e C por altura.
+b) a área do círculo de raio C. (pi = 3.14159)
+c) a área do trapézio que tem A e B por bases e C por altura.
+d) a área do quadrado que tem lado B.
+e) a área do retângulo que tem lados A e B.
 Entrada
-O arquivo de entrada contém um valor de ponto flutuante (dupla precisão), correspondente ao raio da esfera.
+O arquivo de entrada contém três valores com um dígito após o ponto decimal.
 
 Saída
-A saída deverá ser uma mensagem "VOLUME" conforme o exemplo fornecido abaixo, com um espaço antes e um espaço depois da igualdade. O valor deverá ser apresentado com 3 casas após o ponto.
+O arquivo de saída deverá conter 5 linhas de dados. Cada linha corresponde a uma das áreas descritas acima, sempre com mensagem correspondente e um espaço entre os dois pontos e o valor. O valor calculado deve ser apresentado com 3 dígitos após o ponto decimal.
+
+Exemplos de Entrada	Exemplos de Saída
+3.0 4.0 5.2
+
+TRIANGULO: 7.800
+CIRCULO: 84.949
+TRAPEZIO: 18.200
+QUADRADO: 16.000
+RETANGULO: 12.000
+
+12.7 10.4 15.2
+
+TRIANGULO: 96.520
+CIRCULO: 725.833
+TRAPEZIO: 175.560
+QUADRADO: 108.160
+RETANGULO: 132.080
 */
 
-let raio = window.prompt();
+//Objeto área
+const Area = function(variavelA,variavelB,variavelC){
+    //Propriedades
+    this.variavelA = variavelA,
+    this.variavelB = variavelB;
+    this.variavelC = variavelC
+}
 
-let volume = ((4.0/3) * 3.14159) * (Math.pow(raio,3));
+//Metodos do objeto
+Area.prototype.triangulo = function(){
+     return Number((this.variavelA * this.variavelC / 2).toFixed(3));
+}
 
-console.log("VOLUME: ",volume.toFixed(3));
+Area.prototype.circulo = function(){
+     return Number((Math.PI * Math.pow(this.variavelC,2)).toFixed(3));
+}
+
+Area.prototype.trapezio = function(){
+    return Number((1/2 * this.variavelC * (this.variavelA + this.variavelB)).toFixed(3));
+}
+
+
+Area.prototype.quadrado = function(){
+    return Number((Math.pow(this.variavelB,2)).toFixed(3));
+}
+
+Area.prototype.retangulo = function(){
+  return Number((this.variavelA * this.variavelB).toFixed(3));
+}
+
+//Instância do objeto
+let area = new Area(12.7,10.4,15.2);
+
+console.log("TRIÂNGULO:",area.triangulo(), 
+            "\nCÍRCULO:",area.circulo(),
+            "\nTRAPEZIO:",area.trapezio(),
+            "\nQUADRADO:",area.quadrado(),
+            "\nRETÂNGULO:",area.retangulo());
