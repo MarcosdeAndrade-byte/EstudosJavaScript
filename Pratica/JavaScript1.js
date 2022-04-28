@@ -1,68 +1,26 @@
-/*Escreva um programa que leia três valores com ponto flutuante de dupla precisão: A, B e C. Em seguida, calcule e mostre:
-a) a área do triângulo retângulo que tem A por base e C por altura.
-b) a área do círculo de raio C. (pi = 3.14159)
-c) a área do trapézio que tem A e B por bases e C por altura.
-d) a área do quadrado que tem lado B.
-e) a área do retângulo que tem lados A e B.
-Entrada
-O arquivo de entrada contém três valores com um dígito após o ponto decimal.
+const numbers = [45, 4, 9, 16, 25];
 
-Saída
-O arquivo de saída deverá conter 5 linhas de dados. Cada linha corresponde a uma das áreas descritas acima, sempre com mensagem correspondente e um espaço entre os dois pontos e o valor. O valor calculado deve ser apresentado com 3 dígitos após o ponto decimal.
+//ForEach
+numbers.forEach((number) => console.log(number));
+console.log();
 
-Exemplos de Entrada	Exemplos de Saída
-3.0 4.0 5.2
-
-TRIANGULO: 7.800
-CIRCULO: 84.949
-TRAPEZIO: 18.200
-QUADRADO: 16.000
-RETANGULO: 12.000
-
-12.7 10.4 15.2
-
-TRIANGULO: 96.520
-CIRCULO: 725.833
-TRAPEZIO: 175.560
-QUADRADO: 108.160
-RETANGULO: 132.080
-*/
-
-//Objeto área
-const Area = function(variavelA,variavelB,variavelC){
-    //Propriedades
-    this.variavelA = variavelA,
-    this.variavelB = variavelB;
-    this.variavelC = variavelC
+//ForIn
+for(let index in numbers){
+  console.log(numbers[index])
 }
+console.log();
 
-//Metodos do objeto
-Area.prototype.triangulo = function(){
-     return Number((this.variavelA * this.variavelC / 2).toFixed(3));
+//ForOf
+const letrasT = ["a","b","c"];
+for (const elementos of letrasT) {
+   console.log(elementos);
 }
+console.log();
 
-Area.prototype.circulo = function(){
-     return Number((Math.PI * Math.pow(this.variavelC,2)).toFixed(3));
-}
-
-Area.prototype.trapezio = function(){
-    return Number((1/2 * this.variavelC * (this.variavelA + this.variavelB)).toFixed(3));
-}
-
-
-Area.prototype.quadrado = function(){
-    return Number((Math.pow(this.variavelB,2)).toFixed(3));
-}
-
-Area.prototype.retangulo = function(){
-  return Number((this.variavelA * this.variavelB).toFixed(3));
-}
-
-//Instância do objeto
-let area = new Area(12.7,10.4,15.2);
-
-console.log("TRIÂNGULO:",area.triangulo(), 
-            "\nCÍRCULO:",area.circulo(),
-            "\nTRAPEZIO:",area.trapezio(),
-            "\nQUADRADO:",area.quadrado(),
-            "\nRETÂNGULO:",area.retangulo());
+// Conjuntos (Equivalem as nossas listas em Java)
+const letras = new Set(["a","b","c"]);
+letras.delete("a");
+for (const index of letras) {
+    letras.add("T");
+    console.log(index);
+ }
